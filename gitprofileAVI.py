@@ -5,7 +5,7 @@ def imgFunctio():
     gitUser = input('github username: ')
 
     url = 'http://github.com/' + gitUser
-    req = req.get(url)
+    req = rq.get(url)
     soup = bs(req.content, 'html.parser')
     profile_image = soup.find('img', {'alt': 'Avatar'})['src']
     return profile_image
